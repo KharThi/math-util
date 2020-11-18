@@ -22,22 +22,31 @@ public class MathUltility {
     //0! = 1! = 1
     // âm giai thừa vô nghĩa
     // giai thừa tăng cặc nhanh , 21! long ko chứa đc
-    public static long getFactorial(int n) {
-        if (n < 0 || n > 20) {
-            throw new IllegalArgumentException("n must be between 0-20");
+//    public static long getFactorial(int n) {
+//        if (n < 0 || n > 20) {
+//            throw new IllegalArgumentException("n must be between 0-20");
+//        }
+//        if (n == 0 || n == 1) {
+//            return 1; //trường hợp đặt biệt return luôn
+//        }
+//        // viết else trừ điểm
+//        //Mặc định đến đây là n= 2..20
+//        long result = 1;
+//        for (int i = 2; i <= n; i++) {
+//            result *= i;
+//        }
+//        return result;
+//    }
+    // Viết bằng đệ quy(gọi lại mình với quy mô khác)
+    public static long getFactorial(int n){
+        if(n < 0 || n > 20){
+            throw new IllegalArgumentException("n must between 0 and 20");
         }
-        if (n == 0 || n == 1) {
-            return 1; //trường hợp đặt biệt return luôn
+        if(n == 0 || n == 1){
+            return 1;
         }
-        // viết else trừ điểm
-        //Mặc định đến đây là n= 2..20
-        long result = 1;
-        for (int i = 2; i <= n; i++) {
-            result *= i;
-        }
-        return result;
+        return n * getFactorial(n-1);
     }
-
     //Muốn kết luận app ổn thì phải test toàn bô các trường hợp xài hàm --> thiết kế test case để verify giá trị trả về (actual vs expected) nếu mọi thứ khớp --> 
     //Mạnh tay gáy, nhưng có nhược điểm là phải nhìn bằng mắt, cách này ổn nhưng tiềm ẩn sai sót
     //Cách nâng cao -> cũng nhìn nhưng chỉ có 2 màu xanh(đúng với mọi case) và đỏ(chỉ cần 1 case đỏ kết luận cả đám đỏ--> hàm không ổn định, chính xác cho mọi trường hợp)
