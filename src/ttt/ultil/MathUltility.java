@@ -37,4 +37,11 @@ public class MathUltility {
         }
         return result;
     }
+
+    //Muốn kết luận app ổn thì phải test toàn bô các trường hợp xài hàm --> thiết kế test case để verify giá trị trả về (actual vs expected) nếu mọi thứ khớp --> 
+    //Mạnh tay gáy, nhưng có nhược điểm là phải nhìn bằng mắt, cách này ổn nhưng tiềm ẩn sai sót
+    //Cách nâng cao -> cũng nhìn nhưng chỉ có 2 màu xanh(đúng với mọi case) và đỏ(chỉ cần 1 case đỏ kết luận cả đám đỏ--> hàm không ổn định, chính xác cho mọi trường hợp)
+    // --> Sử dụng framework bên ngoài JDK, Unit test Framework
+    //Các bộ nổi tiếng : JUnit, TestNG, NUnit, xUnit, PHPUnit, ...
+    // Không cần care về chi tiết các tình huống chạy 
 }
