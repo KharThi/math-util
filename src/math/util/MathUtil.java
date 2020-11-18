@@ -27,6 +27,7 @@ public class MathUtil {
         //Test Nhiều thứ khác ...(Lý thuyết là phải hết các trường hợp)
         //Test các ngoại lệ ...
         System.out.println("Yeah!");
+        System.out.println("Local and Server is diff");
     }
 
 }
